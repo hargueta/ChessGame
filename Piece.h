@@ -9,6 +9,13 @@
 // ****************************
 
 class Piece {
+    private:
+        const int pieceId;
+
+    public:
+        Piece();
+        Piece(int pieceId,)
+        int getPieceId()const {return pieceId;}
 
 };
 
