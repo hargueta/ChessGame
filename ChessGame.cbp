@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Piece.cpp" />
+		<Unit filename="Piece.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
