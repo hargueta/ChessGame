@@ -7,7 +7,7 @@ using namespace std;
 
 class Tile{
     private:
-        unsigned int piece;
+        Piece piece;
         bool isPiece;
 
     public:
@@ -23,7 +23,7 @@ class Tile{
         void setPiece(unsigned int piece);
         void setIsPiece(bool isPiece);
 
-        int getPiece()const{return piece;}
+        int getPiece()const{return piece.getPieceId();}
         bool getIsPiece()const{return isPiece;}
 
 

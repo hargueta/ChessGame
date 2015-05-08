@@ -29,7 +29,7 @@ void Tile::start_up()
           -rook, -knight, -bishop, -queen, -king, -bishop, -knight, -rook};*/
 void Tile::setPiece(unsigned int piece)
 {
-    this->piece = piece;
+    this->piece.setPieceId(piece);
 
 }
 void Tile::setIsPiece(bool isPiece)
