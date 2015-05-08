@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1431120985 source:c:\users\gabriel\documents\chessgame\chessgame\tile.cpp
 	"tile.h"
 	<cassert>
@@ -7,4 +8,10 @@
 
 1431120952 c:\users\gabriel\documents\chessgame\chessgame\tile.h
 	<iostream>
+=======
+1431116935 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Piece.cpp
+	"Piece.h"
+
+1431116873 /home/juice/Documents/CSS2A-Assignments/ChessGame/Piece.h
+>>>>>>> origin/master
 
