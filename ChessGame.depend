@@ -30,7 +30,7 @@
 	<iostream>
 	<cstring>
 
-1431122773 source:c:\users\gabriel\documents\chessgame\chessgame\piece.cpp
+1431127071 source:c:\users\gabriel\documents\chessgame\chessgame\piece.cpp
 	"Piece.h"
 
 1431125367 c:\users\gabriel\documents\chessgame\chessgame\piece.h
@@ -38,4 +38,11 @@
 1431119169 /home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.h
 	"Piece.h"
 	<iostream>
+
+1431126330 source:c:\users\gabriel\documents\chessgame\chessgame\board.cpp
+	"Board.h"
+	<iostream>
+
+1431127073 c:\users\gabriel\documents\chessgame\chessgame\board.h
+	"Tile.h"
 
