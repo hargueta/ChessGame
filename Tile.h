@@ -9,17 +9,13 @@ class Tile{
     private:
         Piece piece;
         bool isPiece;
+        int x;
+        int y;
 
     public:
         Tile();
         void move_options();
-        void start_up();
-        //code for start up.
-        /*const startup[8][8] = { rook, knight, bishop, queen, king, bishop,
-        knight, rook, pawn, pawn,pawn,pawn,pawn,pawn,pawn, pawn, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0, 0, 0, 0, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn,
-          -rook, -knight, -bishop, -queen, -king, -bishop, -knight, -rook};*/
+
         void setPiece(unsigned int piece);
         void setIsPiece(bool isPiece);
 

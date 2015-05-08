@@ -1,17 +1,21 @@
 #ifndef BOARD_H_INCLUDED
 #define BOARD_H_INCLUDED
-#include "tile.h"
+#include "Tile.h"
 
 class Board
 {
     private:
         Tile arra[8][8];
-
+        const string startup[][8] = { "rook", "knight", "bishop", "queen", "king", "bishop",
+        "knight", "rook", "pawn", "pawn","pawn","pawn","pawn","pawn","pawn", "pawn", "0", "0", "0", "0",
+         "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
+          "0", "0", "0", "0", "0", "-pawn", "-pawn", "-pawn", "-pawn", "-pawn", "-pawn", "-pawn", "-pawn",
+          "-rook", "-knight", "-bishop", "-queen", "-king", "-bishop", "-knight", "-rook"};
 
     public:
         Board();
 
-        void start_up();
+        void setup();
         //code for start up.
         /*const startup[8][8] = { rook, knight, bishop, queen, king, bishop,
         knight, rook, pawn, pawn,pawn,pawn,pawn,pawn,pawn, pawn, 0, 0, 0, 0,

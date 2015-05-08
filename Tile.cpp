@@ -1,4 +1,4 @@
-#include "tile.h"
+#include "Tile.h"
 #include <cassert>
 #include <iostream>
 #include <cstring>
@@ -11,22 +11,13 @@ Tile::Tile()
     piece = 0;
     isPiece = false;
 }
-//longest implementation method
+//longest implementation method[WORK DURING THE WEEKEND ON THIS]
 void Tile::move_options()
 {
 
 
 }
-void Tile::start_up()
-{
 
-}
-        //code for start up.
-        /*const startup[8][8] = { rook, knight, bishop, queen, king, bishop,
-        knight, rook, pawn, pawn,pawn,pawn,pawn,pawn,pawn, pawn, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0, 0, 0, 0, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn,
-          -rook, -knight, -bishop, -queen, -king, -bishop, -knight, -rook};*/
 void Tile::setPiece(unsigned int piece)
 {
     this->piece.setPieceId(piece);
