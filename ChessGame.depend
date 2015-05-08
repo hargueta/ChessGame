@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1431120985 source:c:\users\gabriel\documents\chessgame\chessgame\tile.cpp
+	"tile.h"
+	<cassert>
+	<iostream>
+	<cstring>
+
+1431120952 c:\users\gabriel\documents\chessgame\chessgame\tile.h
+	<iostream>
+
