@@ -1,4 +1,4 @@
-#include "tile.h"
+#include "Tile.h"
 #include <cassert>
 #include <iostream>
 #include <cstring>
@@ -8,7 +8,6 @@ using namespace std;
 
 Tile::Tile()
 {
-    piece = 0;
     isPiece = false;
 }
 //longest implementation method
