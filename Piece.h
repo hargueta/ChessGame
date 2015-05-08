@@ -10,15 +10,16 @@
 
 class Piece {
     private:
-        const int pieceId;
+        int pieceId;
+        char pieceIcon;
 
     public:
         Piece();
         Piece(int pieceId);
         int getPieceId()const {return pieceId;}
-        void movePawn();
-        void moveKing();
-        void moveQueen();
+        char getPieceIcon()const {return pieceIcon;}
+        void setPieceId(int pieceId);
+        void setPieceIcon(char pieceIcon);
 
 };
 
