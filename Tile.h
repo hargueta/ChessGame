@@ -17,7 +17,7 @@ class Tile{
         Tile();
         void move_options();
 
-        void setPiece(unsigned int piece);
+        void setPiece(int piece);
         void setIsPiece(bool isPiece);
 
         int getPiece()const{return piece.getPieceId();}
