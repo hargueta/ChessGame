@@ -14,8 +14,11 @@ class Piece {
 
     public:
         Piece();
-        Piece(int pieceId,)
+        Piece(int pieceId);
         int getPieceId()const {return pieceId;}
+        void movePawn();
+        void moveKing();
+        void moveQueen();
 
 };
 
