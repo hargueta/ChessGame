@@ -12,10 +12,12 @@ using namespace std;
 
 Piece::Piece() {
     pieceId = 0;
+    pieceIcon = ' ';
 }
 
-Piece::Piece(int pieceId) {
+Piece::Piece(int pieceId, char pieceIcon) {
     this->pieceId = pieceId;
+    this->pieceIcon = pieceIcon;
 }
 
 void Piece::setPieceId(int pieceId) {

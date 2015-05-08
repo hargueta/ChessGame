@@ -15,7 +15,7 @@ class Piece {
 
     public:
         Piece();
-        Piece(int pieceId);
+        Piece(int pieceId, char pieceIcon);
         int getPieceId()const {return pieceId;}
         char getPieceIcon()const {return pieceIcon;}
         void setPieceId(int pieceId);
