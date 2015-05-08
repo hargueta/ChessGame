@@ -23,3 +23,13 @@
 
 1431116873 777a77106bd5da05ef6a47b02d3b523355ab0
 
+1431119185 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.cpp
+	"Tile.h"
+	<cassert>
+	<iostream>
+	<cstring>
+
+1431119169 /home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.h
+	"Piece.h"
+	<iostream>
+
