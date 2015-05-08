@@ -1,0 +1,6 @@
+Merge made by the 'recursive' strategy.
+ ChessGame.depend |  10 ++++++++++
+ Tile.cpp         |   5 ++---
+ Tile.h           |   5 +++--
+ obj/Debug/Tile.o | Bin 11318 -> 22568 bytes
+ 4 files changed, 15 insertions(+), 5 deletions(-)
