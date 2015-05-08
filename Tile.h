@@ -1,6 +1,7 @@
 #ifndef TILE_H_INCLUDED
 #define TILE_H_INCLUDED
 
+#include "Piece.h"
 #include <iostream>
 
 using namespace std;

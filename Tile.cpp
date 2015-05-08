@@ -8,7 +8,6 @@ using namespace std;
 
 Tile::Tile()
 {
-    piece = 0;
     isPiece = false;
 }
 //longest implementation method[WORK DURING THE WEEKEND ON THIS]
