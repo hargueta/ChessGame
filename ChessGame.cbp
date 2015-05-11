@@ -31,8 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Board.cpp" />
 		<Unit filename="Board.h" />
-		<Unit filename="ClassTest.cpp" />
 		<Unit filename="Piece.cpp" />
 		<Unit filename="Piece.h" />
 		<Unit filename="Tile.cpp" />
