@@ -1,3 +1,4 @@
+#include "Piece.h"
 #include "Tile.h"
 #include <cassert>
 #include <iostream>
@@ -17,7 +18,7 @@ void Tile::move_options()
 
 }
 
-void Tile::setPiece(unsigned int piece)
+void Tile::setPiece(int piece)
 {
     this->piece.setPieceId(piece);
 
