@@ -14,10 +14,10 @@ Board::Board()
 
 void Board::setup()
 {
-    //black pieces
+    //player 1
     for (int iCol = 0; iCol < 8; ++iCol) {
 			arra[6][iCol].setPiece(100);
-			arra[6][iCol].setPieceIcon('P');
+			arra[6][iCol].setPieceIcon('p');
 			arra[6][iCol].setIsPiece(true);
 			arra[6][iCol].setIsPlayer1(true);
     }
@@ -55,7 +55,7 @@ void Board::setup()
     arra[7][7].setIsPlayer1(true);
 
 
-    //white pieces
+    //player 2
     for(int iCol = 0; iCol < 8; ++iCol)
     {
         arra[1][iCol].setPiece(100);
