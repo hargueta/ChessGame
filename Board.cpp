@@ -109,13 +109,23 @@ void Board::display()
 
           for (int j = 0; j < 8; j++)
           {
+
              //keep refreshing board after each turn.
-             cout << arra[i][j].getPieceIcon();
+             cout << arra[i][j].getPieceIcon() << " ";
 
           }
-
+          cout << "|" << i + 1;
           cout << endl;
-          cout << "  " << i + 1;
+
+        }
+        for(int i = 0; i < 8; i++) {
+            cout << "- ";
+        }
+
+        cout << endl;
+
+        for(int i = 0; i < 8; i++) {
+            cout <<  i + 1 << " ";
         }
 
 
