@@ -9,11 +9,8 @@ class Board
         Tile arra[8][8];
 
         //---->>>startup board with order of pieces.<<<----
-       /* const char startup[8][8] = { 'R', 'N', 'B', 'Q', 'K', 'B',
-        'N', 'R', 'P', 'P','P','P','P','P','P', 'P', ' ', ' ', ' ', ' ',
-         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-          ' ', ' ', ' ', ' ', ' ', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p',
-          'r', 'n', 'b', 'k', 'q', 'b', 'n', 'r'};*/
+        char startup[8][8];
+        bool isCheckmate;
 
     public:
         Board();
@@ -26,7 +23,7 @@ class Board
          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
           0, 0, 0, 0, 0, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn,
           -rook, -knight, -bishop, -queen, -king, -bishop, -knight, -rook};*/
-        void display(Tile arra[8][8]);
+        void display();
         //should update board every move.
 
 

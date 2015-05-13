@@ -10,17 +10,17 @@ class Tile{
     private:
         Piece piece;
         bool isPiece;
-        int x;
-        int y;
 
     public:
         Tile();
         void move_options();
 
-        void setPiece(int piece);
+        void setPieceId(int pieceId);
+        void setPieceIcon(char icon);
         void setIsPiece(bool isPiece);
 
-        int getPiece()const{return piece.getPieceId();}
+        int getPieceId()const{return piece.getPieceId();}
+        char getPieceIcon()const {return piece.getPieceIcon();}
         bool getIsPiece()const{return isPiece;}
 
 
