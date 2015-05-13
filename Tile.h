@@ -14,6 +14,10 @@ class Tile{
         bool isPlayer1;
         bool isPlayer2;
 
+        //for when the player wants to move
+        int x;
+        int y;
+
 
 
     public:

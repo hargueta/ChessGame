@@ -8,7 +8,6 @@ class Board
         //array of tiles for a place fro each piece to go on.
         Tile arra[8][8];
 
-        //---->>>startup board with order of pieces.<<<----
 
 
         bool isCheckmate;
@@ -29,7 +28,15 @@ class Board
 
 
 };
+/*
+pawn = 100
+bishop = 305
+knight = 300
+rook = 500
+queen = 900
+king = 2000
 
+*/
 
 
 
