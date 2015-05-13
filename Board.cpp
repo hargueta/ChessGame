@@ -119,7 +119,7 @@ void Board::display()
 
         }
         for(int i = 0; i < 8; i++) {
-            cout << "- ";
+            cout << "--";
         }
 
         cout << endl;
