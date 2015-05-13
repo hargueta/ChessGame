@@ -10,10 +10,14 @@ using namespace std;
 Tile::Tile()
 {
     isPiece = false;
+    isPlayer1 = false;
+    isPlayer2 = false;
+
 }
-//longest implementation method[WORK DURING THE WEEKEND ON THIS]
+//the biggest function here.
 void Tile::move_options()
 {
+
 
 
 }
@@ -28,5 +32,17 @@ void Tile::setIsPiece(bool isPiece)
     this->isPiece = isPiece;
 
 }
+
+void Tile::setIsPlayer1(bool isPlayer1)
+{
+    this->isPlayer1= isPlayer1;
+}
+void Tile::setIsPlayer2(bool isPlayer2)
+{
+    this->isPlayer2= isPlayer2;
+
+}
+
+
 
 

@@ -10,8 +10,11 @@ class Tile{
     private:
         Piece piece;
         bool isPiece;
-        int x;
-        int y;
+
+        bool isPlayer1;
+        bool isPlayer2;
+
+
 
     public:
         Tile();
@@ -19,9 +22,14 @@ class Tile{
 
         void setPiece(int piece);
         void setIsPiece(bool isPiece);
+        void setIsPlayer1(bool isPlayer1);
+        void setIsPlayer2(bool isPlayer2);
 
         int getPiece()const{return piece.getPieceId();}
         bool getIsPiece()const{return isPiece;}
+        bool getIsplayer1()const{return isPlayer1;}
+        bool getIsplayer2()const{return isPlayer2;}
+
 
 
 

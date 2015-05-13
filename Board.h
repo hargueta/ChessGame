@@ -9,21 +9,22 @@ class Board
         Tile arra[8][8];
 
         //---->>>startup board with order of pieces.<<<----
-        const char startup[8][8];
+
+
+        bool isCheckmate;
 
     public:
         Board();
         //default constructor
 
         void setup();
-        //code for start up.
-        /*const startup[8][8] = { rook, knight, bishop, queen, king, bishop,
-        knight, rook, pawn, pawn,pawn,pawn,pawn,pawn,pawn, pawn, 0, 0, 0, 0,
-         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-          0, 0, 0, 0, 0, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn, -pawn,
-          -rook, -knight, -bishop, -queen, -king, -bishop, -knight, -rook};*/
+
         void display(Tile arra[8][8]);
         //should update board every move.
+
+        void setIsCheckmate(bool isCheckmate);
+        bool getIsCheckmate()const{return isCheckmate;}
+
 
 
 
