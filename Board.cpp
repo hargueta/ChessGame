@@ -33,7 +33,7 @@ void Board::setup()
     arra[7][2].setIsPiece(true);
     arra[7][2].setIsPlayer1(true);
 
-    arra[7][3].setPiece(2000);
+    arra[7][3].setPiece(200);
     arra[7][3].setIsPiece(true);
     arra[7][3].setIsPlayer1(true);
 
@@ -74,7 +74,7 @@ void Board::setup()
     arra[0][2].setIsPiece(true);
     arra[0][2].setIsPlayer2(true);
 
-    arra[0][3].setPiece(2000);
+    arra[0][3].setPiece(200);
     arra[0][3].setIsPiece(true);
     arra[0][3].setIsPlayer2(true);
 
@@ -106,6 +106,7 @@ void Board::display()
         {
           for (int j = 0; j < 8; j++)
           {
+
              //keep refreshing board after each turn.
 
           }
