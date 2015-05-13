@@ -17,6 +17,7 @@ void Board::setup()
     //black pieces
     for (int iCol = 0; iCol < 8; ++iCol) {
 			arra[6][iCol].setPiece(100);
+			arra[6][iCol].setPieceIcon('P');
 			arra[6][iCol].setIsPiece(true);
 			arra[6][iCol].setIsPlayer1(true);
     }
@@ -33,7 +34,7 @@ void Board::setup()
     arra[7][2].setIsPiece(true);
     arra[7][2].setIsPlayer1(true);
 
-    arra[7][3].setPiece(2000);
+    arra[7][3].setPiece(200);
     arra[7][3].setIsPiece(true);
     arra[7][3].setIsPlayer1(true);
 
@@ -74,7 +75,7 @@ void Board::setup()
     arra[0][2].setIsPiece(true);
     arra[0][2].setIsPlayer2(true);
 
-    arra[0][3].setPiece(2000);
+    arra[0][3].setPiece(200);
     arra[0][3].setIsPiece(true);
     arra[0][3].setIsPlayer2(true);
 
@@ -99,19 +100,24 @@ void Board::setup()
 void Board::display()
 {
     //ADD isCheckmate in board class
-    setup();
-    while(isCheckmate !=false)
+    //setup();
+    isCheckmate = true;
+    if(isCheckmate != false)
     {
         for (int i = 0; i < 8; i++)
         {
+
           for (int j = 0; j < 8; j++)
           {
              //keep refreshing board after each turn.
+             cout << arra[i][j].getPieceIcon();
 
           }
-          cout << endl;
 
+          cout << endl;
+          cout << "  " << i + 1;
         }
+
 
     }
     //loop goes here for update board every turn per player's turn.

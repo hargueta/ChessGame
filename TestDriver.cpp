@@ -16,8 +16,9 @@ using namespace std;
 int main() {
     Board board;
 
-    //board.display();
     board.setup();
+    board.display();
+    //board.setup();
 
     return 0;
 }
