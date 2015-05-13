@@ -11,17 +11,31 @@ class Tile{
         Piece piece;
         bool isPiece;
 
+        bool isPlayer1;
+        bool isPlayer2;
+
+        //for when the player wants to move
+        int x;
+        int y;
+
+
+
     public:
         Tile();
         void move_options();
 
-        void setPieceId(int pieceId);
+        void setPiece(int pieceId);
         void setPieceIcon(char icon);
         void setIsPiece(bool isPiece);
+        void setIsPlayer1(bool isPlayer1);
+        void setIsPlayer2(bool isPlayer2);
 
-        int getPieceId()const{return piece.getPieceId();}
+        int getPiece()const{return piece.getPieceId();}
         char getPieceIcon()const {return piece.getPieceIcon();}
         bool getIsPiece()const{return isPiece;}
+        bool getIsplayer1()const{return isPlayer1;}
+        bool getIsplayer2()const{return isPlayer2;}
+
 
 
 

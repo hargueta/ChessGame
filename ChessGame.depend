@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
 17641232 <<<<<<< HEAD
 
-1431125367 source:c:\users\gabriel\documents\chessgame\chessgame\tile.cpp
+1431367966 source:c:\users\gabriel\documents\chessgame\chessgame\tile.cpp
+	"Piece.h"
 	"Tile.h"
 	<cassert>
 	<iostream>
 	<cstring>
 
-1431125367 c:\users\gabriel\documents\chessgame\chessgame\tile.h
+1431392425 c:\users\gabriel\documents\chessgame\chessgame\tile.h
 	"Piece.h"
 	<iostream>
 
@@ -24,7 +25,7 @@
 
 1431116873 777a77106bd5da05ef6a47b02d3b523355ab0
 
-1431389835 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.cpp
+1431534497 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.cpp
 	"Piece.h"
 	"Tile.h"
 	<cassert>
@@ -36,7 +37,7 @@
 
 1431125367 c:\users\gabriel\documents\chessgame\chessgame\piece.h
 
-1431387921 /home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.h
+1431534497 /home/juice/Documents/CSS2A-Assignments/ChessGame/Tile.h
 	"Piece.h"
 	<iostream>
 
@@ -44,11 +45,11 @@
 	"Board.h"
 	<iostream>
 
-1431533504 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Board.cpp
+1431534373 source:/home/juice/Documents/CSS2A-Assignments/ChessGame/Board.cpp
 	"Board.h"
 	<iostream>
 
-1431386523 /home/juice/Documents/CSS2A-Assignments/ChessGame/Board.h
+1431534459 /home/juice/Documents/CSS2A-Assignments/ChessGame/Board.h
 	"Tile.h"
 
 1431127073 c:\users\gabriel\documents\chessgame\chessgame\board.h

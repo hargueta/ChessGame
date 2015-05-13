@@ -10,8 +10,13 @@ using namespace std;
 Tile::Tile()
 {
     isPiece = false;
+    isPlayer1 = false;
+    isPlayer2 = false;
+    x = 0;
+    y = 0;
+
 }
-//longest implementation method[WORK DURING THE WEEKEND ON THIS]
+//the biggest function here.
 void Tile::move_options()
 {
     if(piece.getPieceId() == 100) {
@@ -39,7 +44,7 @@ void Tile::move_options()
     }
 }
 
-void Tile::setPieceId(int piece)
+void Tile::setPiece(int piece)
 {
     this->piece.setPieceId(piece);
 }
@@ -52,5 +57,18 @@ void Tile::setPieceIcon(char icon)
 {
     this->piece.setPieceIcon(icon);
 }
+
+void Tile::setIsPlayer1(bool isPlayer1)
+{
+    this->isPlayer1= isPlayer1;
+}
+
+void Tile::setIsPlayer2(bool isPlayer2)
+{
+    this->isPlayer2= isPlayer2;
+
+}
+
+
 
 
