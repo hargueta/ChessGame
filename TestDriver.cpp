@@ -26,14 +26,17 @@ int main() {
 
     while(!board.getIsCheckmate()) {
         if(counter % 2 == 0) {
-            cout << endl << "PLAYER ONE'S TURN" << endl;
+            cout << "___________________" << endl;
+            cout << "PLAYER ONE'S TURN" << endl;
         } else {
-            cout << endl << "PLAYER TWO'S TURN" << endl;
+            cout << "___________________" << endl;
+            cout << "PLAYER TWO'S TURN" << endl;
         }
 
         if(counter % 2 == 0) {
+            cout << endl << "counter: " << counter << endl;
             do {
-                cout << "Enter the position of the piece you would like to move (x, y): ";
+                cout << "Enter the position of the piece you would like to move: ";
                 cin >> fromX >> fromY;
                 if(board.getTile(fromY - 1, fromX - 1).getIsPlayer1() && board.isValidPiece(fromY - 1, fromX - 1)) {
                     cout << "Is player one" << endl;

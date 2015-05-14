@@ -19,9 +19,9 @@ Tile::Tile()
 //the biggest function here.
 //will confirm the move the player is making is valid, and within
 //the move capabilities of the chess piece.
-void Tile::move_options()
+void Tile::pawn_move_option()
 {
-    if(piece.getPieceId() == 100) {
+  if(piece.getPieceId() == 100) {
             /*
             	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
 		CAPiece* qpDest = qpaaBoard[iDestRow][iDestCol];
@@ -58,40 +58,10 @@ void Tile::move_options()
 
     }
 
-    else if(piece.getPieceId() == 200) {
-            /*
-    	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
-		int iRowDelta = iDestRow - iSrcRow;
-		int iColDelta = iDestCol - iSrcCol;
-		if (((iRowDelta >= -1) && (iRowDelta <= 1)) &&
-			((iColDelta >= -1) && (iColDelta <= 1)))
-		{
-			return true;
-		}
-		return false;
-	}*/
-    }
-
-    else if(piece.getPieceId() == 300) {
-    /*
-    	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
-		// Destination square is unoccupied or occupied by opposite color
-		if ((iSrcCol == iDestCol + 1) || (iSrcCol == iDestCol - 1)) {
-			if ((iSrcRow == iDestRow + 2) || (iSrcRow == iDestRow - 2)) {
-				return true;
-			}
-		}
-		if ((iSrcCol == iDestCol + 2) || (iSrcCol == iDestCol - 2)) {
-			if ((iSrcRow == iDestRow + 1) || (iSrcRow == iDestRow - 1)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	*/
-    }
-
-    else if(piece.getPieceId() == 305) {
+}
+void Tile::bishop_move_option()
+{
+    if(piece.getPieceId() == 305) {
     /*
     	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
 		if ((iDestCol - iSrcCol == iDestRow - iSrcRow) || (iDestCol - iSrcCol == iSrcRow - iDestRow)) {
@@ -115,7 +85,31 @@ void Tile::move_options()
     */
     }
 
-    else if(piece.getPieceId() == 500) {
+}
+void Tile::knight_move_option()
+{
+	/*
+	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
+		// Destination square is unoccupied or occupied by opposite color
+		if ((iSrcCol == iDestCol + 1) || (iSrcCol == iDestCol - 1)) {
+			if ((iSrcRow == iDestRow + 2) || (iSrcRow == iDestRow - 2)) {
+				return true;
+			}
+		}
+		if ((iSrcCol == iDestCol + 2) || (iSrcCol == iDestCol - 2)) {
+			if ((iSrcRow == iDestRow + 1) || (iSrcRow == iDestRow - 1)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	*/
+
+}
+void Tile::rook_move_option()
+{
+
+    if(piece.getPieceId() == 500) {
     /*
     	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
 		if (iSrcRow == iDestRow) {
@@ -142,7 +136,10 @@ void Tile::move_options()
     */
     }
 
-    else if(piece.getPieceId() == 900) {
+}
+void Tile::queen_move_option()
+{
+    if(piece.getPieceId() == 900) {
     /*
     bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
 		if (iSrcRow == iDestRow) {
@@ -183,6 +180,25 @@ void Tile::move_options()
 	}
     */
     }
+
+}
+void Tile::king_move_option()
+{
+    if(piece.getPieceId() == 200) {
+            /*
+    	bool AreSquaresLegal(int iSrcRow, int iSrcCol, int iDestRow, int iDestCol, CAPiece* qpaaBoard[8][8]) {
+		int iRowDelta = iDestRow - iSrcRow;
+		int iColDelta = iDestCol - iSrcCol;
+		if (((iRowDelta >= -1) && (iRowDelta <= 1)) &&
+			((iColDelta >= -1) && (iColDelta <= 1)))
+		{
+			return true;
+		}
+		return false;
+	}*/
+    }
+
+
 }
 
 void Tile::setPiece(int piece)
