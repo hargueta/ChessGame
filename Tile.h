@@ -33,8 +33,8 @@ class Tile{
         int getPiece()const{return piece.getPieceId();}
         char getPieceIcon()const {return piece.getPieceIcon();}
         bool getIsPiece()const{return isPiece;}
-        bool getIsplayer1()const{return isPlayer1;}
-        bool getIsplayer2()const{return isPlayer2;}
+        bool getIsPlayer1()const{return isPlayer1;}
+        bool getIsPlayer2()const{return isPlayer2;}
 
 
 

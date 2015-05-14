@@ -19,6 +19,10 @@ class Board
 
         //should update board every move.
 
+        Tile getTile(int x, int y){return arra[x][y];}
+
+        bool isValidPiece(int x, int y);
+
         void setIsCheckmate(bool isCheckmate);
         bool getIsCheckmate()const{return isCheckmate;}
 
