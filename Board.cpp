@@ -130,6 +130,9 @@ void Board::display()
                 //keep refreshing board after each turn.
                 if(arra[i][j].getIsPiece() == true)
                     cout << arra[i][j].getPieceIcon() << " ";
+
+                //displays the tiles when they are empty and contain
+                //zero pieces.
                 if ( arra[i][j].getIsPiece() == false)
                 {
                     if((i+j) % 2 == 1)
