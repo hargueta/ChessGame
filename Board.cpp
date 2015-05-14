@@ -23,34 +23,42 @@ void Board::setup()
     }
 
     arra[7][0].setPiece(500);
+    arra[7][0].setPieceIcon('r');
     arra[7][0].setIsPiece(true);
     arra[7][0].setIsPlayer1(true);
 
     arra[7][1].setPiece(300);
+    arra[7][1].setPieceIcon('n');
     arra[7][1].setIsPiece(true);
     arra[7][1].setIsPlayer1(true);
 
     arra[7][2].setPiece(305);
+    arra[7][2].setPieceIcon('b');
     arra[7][2].setIsPiece(true);
     arra[7][2].setIsPlayer1(true);
 
     arra[7][3].setPiece(200);
+    arra[7][3].setPieceIcon('k');
     arra[7][3].setIsPiece(true);
     arra[7][3].setIsPlayer1(true);
 
     arra[7][4].setPiece(900);
+    arra[7][4].setPieceIcon('q');
     arra[7][4].setIsPiece(true);
     arra[7][4].setIsPlayer1(true);
 
     arra[7][5].setPiece(305);
+    arra[7][5].setPieceIcon('b');
     arra[7][5].setIsPiece(true);
     arra[7][5].setIsPlayer1(true);
 
     arra[7][6].setPiece(300);
+    arra[7][6].setPieceIcon('n');
     arra[7][6].setIsPiece(true);
     arra[7][6].setIsPlayer1(true);
 
     arra[7][7].setPiece(500);
+    arra[7][7].setPieceIcon('r');
     arra[7][7].setIsPiece(true);
     arra[7][7].setIsPlayer1(true);
 
@@ -59,40 +67,48 @@ void Board::setup()
     for(int iCol = 0; iCol < 8; ++iCol)
     {
         arra[1][iCol].setPiece(100);
-        arra[1][iCol].setPieceIcon('p');
+        arra[1][iCol].setPieceIcon('P');
         arra[1][iCol].setIsPiece(true);
         arra[1][iCol].setIsPlayer2(true);
     }
 
     arra[0][0].setPiece(500);
+    arra[0][0].setPieceIcon('R');
     arra[0][0].setIsPiece(true);
     arra[0][0].setIsPlayer2(true);
 
     arra[0][1].setPiece(300);
+    arra[0][1].setPieceIcon('N');
     arra[0][1].setIsPiece(true);
     arra[0][1].setIsPlayer2(true);
 
     arra[0][2].setPiece(305);
+    arra[0][2].setPieceIcon('B');
     arra[0][2].setIsPiece(true);
     arra[0][2].setIsPlayer2(true);
 
     arra[0][3].setPiece(200);
+    arra[0][3].setPieceIcon('K');
     arra[0][3].setIsPiece(true);
     arra[0][3].setIsPlayer2(true);
 
     arra[0][4].setPiece(900);
+    arra[0][4].setPieceIcon('Q');
     arra[0][4].setIsPiece(true);
     arra[0][4].setIsPlayer2(true);
 
     arra[0][5].setPiece(305);
+    arra[0][5].setPieceIcon('B');
     arra[0][5].setIsPiece(true);
     arra[0][5].setIsPlayer2(true);
 
     arra[0][6].setPiece(300);
+    arra[0][6].setPieceIcon('N');
     arra[0][6].setIsPiece(true);
     arra[0][6].setIsPlayer2(true);
 
     arra[0][7].setPiece(500);
+    arra[0][7].setPieceIcon('R');
     arra[0][7].setIsPiece(true);
     arra[0][7].setIsPlayer2(true);
 }
@@ -100,7 +116,7 @@ void Board::setup()
 
 void Board::display()
 {
-    //ADD isCheckmate in board class
+
     //setup();
     if(isCheckmate == false)
     {
@@ -110,8 +126,18 @@ void Board::display()
           for (int j = 0; j < 8; j++)
           {
 
-             //keep refreshing board after each turn.
-             cout << arra[i][j].getPieceIcon() << " ";
+                //keep refreshing board after each turn.
+                if(arra[i][j].getIsPiece() == true)
+                    cout << arra[i][j].getPieceIcon() << " ";
+                if ( arra[i][j].getIsPiece() == false)
+                {
+                    if((i+j) % 2 == 1)
+                    {
+                        cout << char(176) << " ";
+                    }
+                    else
+                        cout << char(178) << " ";
+                }
 
           }
           cout << "|" << i + 1;
@@ -136,6 +162,7 @@ void Board::display()
 
 }
         //should update board every move.
+<<<<<<< HEAD
 
 bool Board::isValidPiece(int x, int y) {
     if(arra[x][y].getPiece() != 0)
@@ -144,3 +171,9 @@ bool Board::isValidPiece(int x, int y) {
         return false;
 }
 
+=======
+void Board::setIsCheckmate(bool isCheckmate)
+{
+    this->isCheckmate = isCheckmate;
+}
+>>>>>>> 2065294969c55c90b2648587b637a403846b3179
