@@ -21,42 +21,56 @@ int main() {
 
     int counter = 0;
 
-    int x, y;
+    int fromX, fromY;
+    int toX, toY;
 
     while(!board.getIsCheckmate()) {
         if(counter % 2 == 0) {
-            cout << "PLAYER ONE'S TURN" << endl;
+            cout << endl << "PLAYER ONE'S TURN" << endl;
         } else {
-            cout << "PLAYER TWO'S TURN" << endl;
+            cout << endl << "PLAYER TWO'S TURN" << endl;
         }
 
         if(counter % 2 == 0) {
-            cout << endl << counter << endl;
             do {
-                cout << "Enter the position of the piece you would like to mmove: ";
-                cin >> x >> y;
-                if(board.getTile(y - 1, x - 1).getIsPlayer1() && board.isValidPiece(y - 1, x - 1)) {
+                cout << "Enter the position of the piece you would like to move (x, y): ";
+                cin >> fromX >> fromY;
+                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer1() && board.isValidPiece(fromY - 1, fromX - 1)) {
                     cout << "Is player one" << endl;
-                    counter++;
+                    do {
+                        cout << "Where would you like to move the piece? (x, y): ";
+                        cin >> toX >> toY;
+                        if(board.getTile(toY - 1, toX - 1).getIsPlayer2() || !board.isValidPiece(toY - 1, toX - 1)) {
+                            cout << "Piece was moved" << endl;
+                            cout << endl;
+                            board.display();
+                            counter++;
+                        } else {
+                            cout << "Invalid move" << endl;
+                        }
+                    }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer1() && board.isValidPiece(fromY - 1, fromX - 1));
+
                 } else {
                     cout << "Invalid move!!!!!!\n";
                 }
 
-            }while(!board.getTile(y - 1, x - 1).getIsPlayer1());
+            }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer1());
         }
 
         else if(counter % 2 == 1) {
             cout << endl << counter << endl;
             do {
-                cout << "Enter the position of the piece you would like to mmove: ";
-                cin >> x >> y;
-                if(board.getTile(y - 1, x - 1).getIsPlayer2() && board.isValidPiece(y - 1, x - 1)) {
+                cout << "Enter the position of the piece you would like to move: ";
+                cin >> fromX >> fromY;
+                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer2() && board.isValidPiece(fromY - 1, fromX - 1)) {
                     cout << "Is player two" << endl;
+                    cout << endl;
+                    board.display();
                     counter++;
                 } else {
                     cout << "Invalid move!!!!!!\n";
                 }
-            }while(!board.getTile(y - 1, x - 1).getIsPlayer2());
+            }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer2());
         }
 
 
