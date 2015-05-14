@@ -18,7 +18,6 @@ int main() {
 
     board.setup();
     board.display();
-    //board.setup();
 
     int counter = 0;
 
