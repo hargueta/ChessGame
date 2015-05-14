@@ -1,3 +1,6 @@
 ChessGame.cbp
 *.cbp
 ChessGame.cbp
+obj/Debug/Board.o
+*.o
+obj/Debug/Board.o
