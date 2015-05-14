@@ -32,7 +32,7 @@ bishop = 305
 knight = 300
 rook = 500
 queen = 900
-king = 2000
+king = 200
 
 */
 
