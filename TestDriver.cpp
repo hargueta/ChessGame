@@ -25,13 +25,15 @@ int main() {
 
     while(!board.getIsCheckmate()) {
         if(counter % 2 == 0) {
+            cout << "___________________" << endl;
             cout << "PLAYER ONE'S TURN" << endl;
         } else {
+            cout << "___________________" << endl;
             cout << "PLAYER TWO'S TURN" << endl;
         }
 
         if(counter % 2 == 0) {
-            cout << endl << counter << endl;
+            cout << endl << "counter: " << counter << endl;
             do {
                 cout << "Enter the position of the piece you would like to move: ";
                 cin >> x >> y;

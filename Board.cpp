@@ -165,11 +165,10 @@ void Board::display()
 
 }
         //should update board every move.
-<<<<<<< HEAD
 
 
-=======
->>>>>>> origin/master
+
+
 bool Board::isValidPiece(int x, int y) {
     if(arra[x][y].getPiece() != 0)
         return true;
@@ -177,15 +176,8 @@ bool Board::isValidPiece(int x, int y) {
         return false;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 void Board::setIsCheckmate(bool isCheckmate)
 {
     this->isCheckmate = isCheckmate;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
