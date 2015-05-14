@@ -27,12 +27,12 @@ class Tile{
         //move options for each individual piece and these
         //will be called when we check what the selected piece
         //is whether its player 1s piece or player 2s piece.
-        void pawn_move_option();
-        void bishop_move_option();
-        void knight_move_option();
-        void rook_move_option();
-        void queen_move_option();
-        void king_move_option();
+        bool pawn_move_option();
+        bool bishop_move_option();
+        bool knight_move_option();
+        bool rook_move_option();
+        bool queen_move_option();
+        bool king_move_option();
 
 
         void setPiece(int pieceId);
