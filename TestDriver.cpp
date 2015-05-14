@@ -34,7 +34,7 @@ int main() {
         if(counter % 2 == 0) {
             cout << endl << counter << endl;
             do {
-                cout << "Enter the position of the piece you would like to mmove: ";
+                cout << "Enter the position of the piece you would like to move: ";
                 cin >> x >> y;
                 if(board.getTile(y - 1, x - 1).getIsPlayer1() && board.isValidPiece(y - 1, x - 1)) {
                     cout << "Is player one" << endl;
@@ -49,7 +49,7 @@ int main() {
         else if(counter % 2 == 1) {
             cout << endl << counter << endl;
             do {
-                cout << "Enter the position of the piece you would like to mmove: ";
+                cout << "Enter the position of the piece you would like to move: ";
                 cin >> x >> y;
                 if(board.getTile(y - 1, x - 1).getIsPlayer2() && board.isValidPiece(y - 1, x - 1)) {
                     cout << "Is player two" << endl;
