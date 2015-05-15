@@ -18,21 +18,22 @@ class Board
 
         void setup();
 
-        bool can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece);
-        bool can_bishop_move(int fromX, int fromY, int toX, int toY, Piece& piece);
-        bool can_knight_move(int fromX, int fromY, int toX, int toY,Piece& piece);
-        bool can_rook_move(int fromX, int fromY, int toX, int toY, Piece& piece);
-        bool can_queen_move(int fromX, int fromY, int toX, int toY, Piece& piece);
-        bool can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece);
+        bool can_pawn_move(int fromX, int fromY, int toX, int toY);
+        bool can_bishop_move(int fromX, int fromY, int toX, int toY);
+        bool can_knight_move(int fromX, int fromY, int toX, int toY);
+        bool can_rook_move(int fromX, int fromY, int toX, int toY);
+        bool can_queen_move(int fromX, int fromY, int toX, int toY);
+        bool can_king_move(int fromX, int fromY, int toX, int toY);
 
         void display();
 
+        void movePiece(int fromX, int fromY, int toX, int toY);
+
         //should update board every move.
 
-        Tile getTile(int x, int y){return arra[x][y];}
+        Tile& getTile(int x, int y){return arra[x][y];}
 
         bool isValidPiece(int x, int y);
-
 
         void setIsCheckmate(bool isCheckmate);
         bool getIsCheckmate()const{return isCheckmate;}

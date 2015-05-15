@@ -117,14 +117,18 @@ void Board::setup()
 //the biggest function here.
 //will confirm the move the player is making is valid, and within
 //the move capabilities of the chess piece.
-bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY)
 {
    if(arra[toX][toY].getIsPiece() == false)
    {
-        if(fromX == toX)
+        cout << "First if" << endl;
+        if(fromX == toX + 1)
         {
-        if(piece.getPieceId() == 100) {
-                if(toY == fromY +1){
+        cout << "Second if" << endl;
+        if(arra[fromX][fromY].getPiece() == 100) {
+            cout << "Third if" << endl;
+                if(toY == fromY){
+                    cout << "Fourth if" << endl;
                     return true;
                 }
 
@@ -137,7 +141,7 @@ bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece)
   }else{
     // toX & toY holds piece of opposite color
 			if ((fromX == toX + 1) || (fromX == toX - 1)) {
-				if (piece.getPieceId() == 100) {
+				if (arra[fromX][fromY].getPiece() == 100) {
 					if (toY == fromY + 1) {
 						return true;
 					}
@@ -154,9 +158,9 @@ bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece)
 
 
 
-bool Board::can_bishop_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_bishop_move(int fromX, int fromY, int toX, int toY)
 {
-    if(piece.getPieceId() == 305) {
+    if(arra[fromX][fromY].getPiece() == 305) {
 
 
 		if ((toX - fromX == toY - fromY) || (toX - fromX == fromY - toY)) {
@@ -179,7 +183,7 @@ bool Board::can_bishop_move(int fromX, int fromY, int toX, int toY, Piece& piece
 	}
     return -1;
 }
-bool Board::can_knight_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_knight_move(int fromX, int fromY, int toX, int toY)
 {
 
 		// Destination square is unoccupied or occupied by opposite color
@@ -197,10 +201,10 @@ bool Board::can_knight_move(int fromX, int fromY, int toX, int toY, Piece& piece
 
 
 }
-bool Board::can_rook_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_rook_move(int fromX, int fromY, int toX, int toY)
 {
 
-    if(piece.getPieceId() == 500) {
+    if(arra[fromX][fromY].getPiece() == 500) {
 
 
 		if (fromY == toY) {
@@ -228,9 +232,9 @@ bool Board::can_rook_move(int fromX, int fromY, int toX, int toY, Piece& piece)
 
  return -1;
 }
-bool Board::can_queen_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_queen_move(int fromX, int fromY, int toX, int toY)
 {
-    if(piece.getPieceId() == 900) {
+    if(arra[fromX][fromY].getPiece() == 900) {
 
 		if (fromY == toY) {
 			// Make sure that all intervening squares are empty
@@ -272,9 +276,9 @@ bool Board::can_queen_move(int fromX, int fromY, int toX, int toY, Piece& piece)
     return -1;
 
 }
-bool Board::can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+bool Board::can_king_move(int fromX, int fromY, int toX, int toY)
 {
-   if(piece.getPieceId() == 200) {
+   if(arra[fromX][fromY].getPiece() == 200) {
 
 
 		int iRowDelta = toY - fromY;
@@ -289,6 +293,34 @@ bool Board::can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece)
    // }
 
     return -1;
+}
+
+void Board::movePiece(int fromX, int fromY, int toX, int toY) {
+    int tempPieceId;
+    char tempPieceIcon;
+    bool tempIsPlayer1;
+    bool tempIsPlayer2;
+    bool tempIsPiece;
+
+    tempPieceId = arra[fromX][fromY].getPiece();
+    tempPieceIcon = arra[fromX][fromY].getPieceIcon();
+    tempIsPlayer1 = arra[fromX][fromY].getIsPlayer1();
+    tempIsPlayer2 = arra[fromX][fromY].getIsPlayer2();
+    tempIsPiece = arra[fromX][fromY].getIsPiece();
+
+    arra[fromX][fromY].setPiece(arra[toX][toY].getPiece());
+    arra[fromX][fromY].setPieceIcon(arra[toX][toY].getPieceIcon());
+    arra[fromX][fromY].setIsPlayer1(arra[toX][toY].getIsPlayer1());
+    arra[fromX][fromY].setIsPlayer2(arra[toX][toY].getIsPlayer2());
+    arra[fromX][fromY].setIsPiece(arra[toX][toY].getIsPiece());
+
+    arra[toX][toY].setPiece(tempPieceId);
+    arra[toX][toY].setPieceIcon(tempPieceIcon);
+    arra[toX][toY].setIsPlayer1(tempIsPlayer1);
+    arra[toX][toY].setIsPlayer2(tempIsPlayer2);
+    arra[toX][toY].setIsPiece(tempIsPiece);
+
+    return;
 }
 
 void Board::display()
