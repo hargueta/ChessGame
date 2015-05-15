@@ -25,13 +25,16 @@ class Board
         bool can_queen_move(int fromX, int fromY, int toX, int toY);
         bool can_king_move(int fromX, int fromY, int toX, int toY);
 
+        //displays the board every other turn including the
+        //black & white pieces
         void display();
+
+        //checks if the current player is inCheck which means they can
+        //only move the king
         bool IsInCheck(int player);
-        bool canMove(int player);
+        //bool canMove(int player);
 
         void movePiece(int fromX, int fromY, int toX, int toY);
-
-        //should update board every move.
 
         Tile& getTile(int x, int y){return arra[x][y];}
 

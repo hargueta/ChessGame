@@ -32,7 +32,7 @@ class Tile{
         //is whether its player 1s piece or player 2s piece.
 
 
-
+        //Accessors & Mutators for each tile
         void setPiece(int pieceId);
         void setPieceIcon(char icon);
         void setIsPiece(bool isPiece);
