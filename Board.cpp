@@ -152,8 +152,6 @@ bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece)
 	}
 
 
-
-
 bool Board::can_bishop_move(int fromX, int fromY, int toX, int toY, Piece& piece)
 {
     if(piece.getPieceId() == 305) {
@@ -342,7 +340,37 @@ void Board::display()
 }
         //should update board every move.
 
+bool IsInCheck(char cColor) {
+		// Find the king
+		int iKingRow;
+		int iKingCol;
+		for (int iRow = 0; iRow < 8; ++iRow) {
+			for (int iCol = 0; iCol < 8; ++iCol) {
+				if (mqpaaBoard[iRow][iCol] != 0) {
+					if (mqpaaBoard[iRow][iCol]->GetColor() == cColor) {
+						if (mqpaaBoard[iRow][iCol]->GetPiece() == 'K') {
+							iKingRow = iRow;
+							iKingCol = iCol;
+						}
+					}
+				}
+			}
+		}
+		// Run through the opponent's pieces and see if any can take the king
+		for (int iRow = 0; iRow < 8; ++iRow) {
+			for (int iCol = 0; iCol < 8; ++iCol) {
+				if (mqpaaBoard[iRow][iCol] != 0) {
+					if (mqpaaBoard[iRow][iCol]->GetColor() != cColor) {
+						if (mqpaaBoard[iRow][iCol]->IsLegalMove(iRow, iCol, iKingRow, iKingCol, mqpaaBoard)) {
+							return true;
+						}
+					}
+				}
+			}
+		}
 
+		return false;
+	}
 
 
 bool Board::isValidPiece(int x, int y) {
