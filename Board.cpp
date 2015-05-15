@@ -139,14 +139,10 @@ bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY)
 {
    if(arra[toX][toY].getIsPiece() == false)
    {
-        cout << "First if" << endl;
         if(fromX == toX + 1)
         {
-        cout << "Second if" << endl;
         if(arra[fromX][fromY].getPiece() == 100) {
-            cout << "Third if" << endl;
                 if(toY == fromY){
-                    cout << "Fourth if" << endl;
                     return true;
                 }
 
@@ -154,6 +150,10 @@ bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY)
                 if(toX == fromX - 1){
                     return true;
                 }
+            }
+        } else if (fromX == toX - 1) {
+            if(toY == fromY) {
+                return true;
             }
         }
   }else{
