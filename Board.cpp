@@ -343,23 +343,44 @@ void Board::movePiece(int fromX, int fromY, int toX, int toY) {
     bool tempIsPlayer2;
     bool tempIsPiece;
 
-    tempPieceId = arra[fromX][fromY].getPiece();
-    tempPieceIcon = arra[fromX][fromY].getPieceIcon();
-    tempIsPlayer1 = arra[fromX][fromY].getIsPlayer1();
-    tempIsPlayer2 = arra[fromX][fromY].getIsPlayer2();
-    tempIsPiece = arra[fromX][fromY].getIsPiece();
+    if(!arra[toX][toY].getIsPiece()) {
+        tempPieceId = arra[fromX][fromY].getPiece();
+        tempPieceIcon = arra[fromX][fromY].getPieceIcon();
+        tempIsPlayer1 = arra[fromX][fromY].getIsPlayer1();
+        tempIsPlayer2 = arra[fromX][fromY].getIsPlayer2();
+        tempIsPiece = arra[fromX][fromY].getIsPiece();
 
-    arra[fromX][fromY].setPiece(arra[toX][toY].getPiece());
-    arra[fromX][fromY].setPieceIcon(arra[toX][toY].getPieceIcon());
-    arra[fromX][fromY].setIsPlayer1(arra[toX][toY].getIsPlayer1());
-    arra[fromX][fromY].setIsPlayer2(arra[toX][toY].getIsPlayer2());
-    arra[fromX][fromY].setIsPiece(arra[toX][toY].getIsPiece());
+        arra[fromX][fromY].setPiece(arra[toX][toY].getPiece());
+        arra[fromX][fromY].setPieceIcon(arra[toX][toY].getPieceIcon());
+        arra[fromX][fromY].setIsPlayer1(arra[toX][toY].getIsPlayer1());
+        arra[fromX][fromY].setIsPlayer2(arra[toX][toY].getIsPlayer2());
+        arra[fromX][fromY].setIsPiece(arra[toX][toY].getIsPiece());
 
-    arra[toX][toY].setPiece(tempPieceId);
-    arra[toX][toY].setPieceIcon(tempPieceIcon);
-    arra[toX][toY].setIsPlayer1(tempIsPlayer1);
-    arra[toX][toY].setIsPlayer2(tempIsPlayer2);
-    arra[toX][toY].setIsPiece(tempIsPiece);
+        arra[toX][toY].setPiece(tempPieceId);
+        arra[toX][toY].setPieceIcon(tempPieceIcon);
+        arra[toX][toY].setIsPlayer1(tempIsPlayer1);
+        arra[toX][toY].setIsPlayer2(tempIsPlayer2);
+        arra[toX][toY].setIsPiece(tempIsPiece);
+    } else {
+        tempPieceId = arra[fromX][fromY].getPiece();
+        tempPieceIcon = arra[fromX][fromY].getPieceIcon();
+        tempIsPlayer1 = arra[fromX][fromY].getIsPlayer1();
+        tempIsPlayer2 = arra[fromX][fromY].getIsPlayer2();
+        tempIsPiece = arra[fromX][fromY].getIsPiece();
+
+        arra[fromX][fromY].setPiece(0);
+        arra[fromX][fromY].setPieceIcon(' ');
+        arra[fromX][fromY].setIsPlayer1(false);
+        arra[fromX][fromY].setIsPlayer2(false);
+        arra[fromX][fromY].setIsPiece(false);
+
+        arra[toX][toY].setPiece(tempPieceId);
+        arra[toX][toY].setPieceIcon(tempPieceIcon);
+        arra[toX][toY].setIsPlayer1(tempIsPlayer1);
+        arra[toX][toY].setIsPlayer2(tempIsPlayer2);
+        arra[toX][toY].setIsPiece(tempIsPiece);
+    }
+
 
     return;
 }
