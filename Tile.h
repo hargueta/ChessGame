@@ -15,6 +15,8 @@ class Tile{
         bool isPlayer1;
         bool isPlayer2;
 
+        int player;
+
         //for when the player wants to move
         int x;
         int y;
@@ -36,12 +38,14 @@ class Tile{
         void setIsPiece(bool isPiece);
         void setIsPlayer1(bool isPlayer1);
         void setIsPlayer2(bool isPlayer2);
+        void setPlayer(int player);
 
         int getPiece()const{return piece.getPieceId();}
         char getPieceIcon()const {return piece.getPieceIcon();}
         bool getIsPiece()const{return isPiece;}
         bool getIsPlayer1()const{return isPlayer1;}
         bool getIsPlayer2()const{return isPlayer2;}
+        int getPlayer()const{return player;}
 
 
 

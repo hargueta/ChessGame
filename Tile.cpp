@@ -43,6 +43,10 @@ void Tile::setIsPlayer2(bool isPlayer2)
     this->isPlayer2= isPlayer2;
 
 }
+void Tile::setPlayer(int player)
+{
+    this->player = player;
+}
 
 
 

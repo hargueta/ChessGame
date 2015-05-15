@@ -26,6 +26,8 @@ class Board
         bool can_king_move(int fromX, int fromY, int toX, int toY);
 
         void display();
+        bool IsInCheck(int player);
+        bool canMove(int player);
 
         void movePiece(int fromX, int fromY, int toX, int toY);
 
