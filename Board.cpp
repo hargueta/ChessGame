@@ -286,7 +286,6 @@ bool Board::can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece)
 		}
 		return false;
 	}
-   // }
 
     return -1;
 }
