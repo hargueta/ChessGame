@@ -1,6 +1,7 @@
 #ifndef TILE_H_INCLUDED
 #define TILE_H_INCLUDED
 
+
 #include "Piece.h"
 #include <iostream>
 
@@ -27,12 +28,7 @@ class Tile{
         //move options for each individual piece and these
         //will be called when we check what the selected piece
         //is whether its player 1s piece or player 2s piece.
-        bool pawn_move_option(int fromX, int fromY, int toX, int toY);
-        bool bishop_move_option(int fromX, int fromY, int toX, int toY);
-        bool knight_move_option(int fromX, int fromY, int toX, int toY);
-        bool rook_move_option(int fromX, int fromY, int toX, int toY);
-        bool queen_move_option(int fromX, int fromY, int toX, int toY);
-        bool king_move_option(int fromX, int fromY, int toX, int toY);
+
 
 
         void setPiece(int pieceId);

@@ -1,4 +1,5 @@
 #include "Board.h"
+#include "Piece.h"
 #include <iostream>
 
 using namespace std;
@@ -113,6 +114,182 @@ void Board::setup()
     arra[0][7].setIsPlayer2(true);
 }
 
+//the biggest function here.
+//will confirm the move the player is making is valid, and within
+//the move capabilities of the chess piece.
+bool Board::can_pawn_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+   if(arra[toX][toY].getIsPiece() == false)
+   {
+        if(fromX == toX)
+        {
+        if(piece.getPieceId() == 100) {
+                if(toY == fromY +1){
+                    return true;
+                }
+
+            }else {
+                if(toX == fromX - 1){
+                    return true;
+                }
+            }
+        }
+  }else{
+    // toX & toY holds piece of opposite color
+			if ((fromX == toX + 1) || (fromX == toX - 1)) {
+				if (piece.getPieceId() == 100) {
+					if (toY == fromY + 1) {
+						return true;
+					}
+				} else {
+					if (toY == fromY - 1) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+
+
+
+bool Board::can_bishop_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+    if(piece.getPieceId() == 305) {
+
+
+		if ((toX - fromX == toY - fromY) || (toX - fromX == fromY - toY)) {
+			// Make sure that all invervening squares are empty
+			int iRowOffset = (toY - fromY > 0) ? 1 : -1;
+			int iColOffset = (toX - fromX > 0) ? 1 : -1;
+			int iCheckRow;
+			int iCheckCol;
+			for (iCheckRow = fromY + iRowOffset, iCheckCol = fromX + iColOffset;
+				iCheckRow !=  toY;
+				iCheckRow = iCheckRow + iRowOffset, iCheckCol = iCheckCol + iColOffset)
+			{
+				if (arra[iCheckRow][iCheckCol].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+    return -1;
+}
+bool Board::can_knight_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+
+		// Destination square is unoccupied or occupied by opposite color
+		if ((fromX == toX + 1) || (fromX == toX - 1)) {
+			if ((fromY == toY + 2) || (fromY == toY - 2)) {
+				return true;
+			}
+		}
+		if ((fromX == toX + 2) || (fromX == toX - 2)) {
+			if ((fromY == toY + 1) || (fromY == toY - 1)) {
+				return true;
+			}
+		}
+		return false;
+
+
+}
+bool Board::can_rook_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+
+    if(piece.getPieceId() == 500) {
+
+
+		if (fromY == toY) {
+			// Make sure that all invervening squares are empty
+			int iColOffset = (toX - fromX > 0) ? 1 : -1;
+			for (int iCheckCol = fromX + iColOffset; iCheckCol !=  toX; iCheckCol = iCheckCol + iColOffset) {
+				if (arra[fromY][iCheckCol].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		} else if (toX == fromX) {
+			// Make sure that all invervening squares are empty
+			int iRowOffset = (toY - fromY > 0) ? 1 : -1;
+			for (int iCheckRow = fromY + iRowOffset; iCheckRow !=  toY; iCheckRow = iCheckRow + iRowOffset) {
+				if (arra[iCheckRow][fromX].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
+
+ return -1;
+}
+bool Board::can_queen_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+    if(piece.getPieceId() == 900) {
+
+		if (fromY == toY) {
+			// Make sure that all intervening squares are empty
+			int iColOffset = (toX - toY > 0) ? 1 : -1;
+			for (int iCheckCol = fromX + iColOffset; iCheckCol !=  toX; iCheckCol = iCheckCol + iColOffset) {
+				if (arra[fromY][iCheckCol].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		} else if (toX == fromX) {
+			// Make sure that all invervening squares are empty
+			int iRowOffset = (toY - fromY > 0) ? 1 : -1;
+			for (int iCheckRow = fromY + iRowOffset; iCheckRow !=  toY; iCheckRow = iCheckRow + iRowOffset) {
+				if (arra[iCheckRow][fromX].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		} else if ((toX - fromX == toY - fromY) || (toX - fromX == fromY - toY)) {
+			// Make sure that all invervening squares are empty
+			int iRowOffset = (toY - fromY > 0) ? 1 : -1;
+			int iColOffset = (toX - fromX > 0) ? 1 : -1;
+			int iCheckRow;
+			int iCheckCol;
+			for (iCheckRow = fromY + iRowOffset, iCheckCol = fromX + iColOffset;
+				iCheckRow !=  toY;
+				iCheckRow = iCheckRow + iRowOffset, iCheckCol = iCheckCol + iColOffset)
+			{
+				if (arra[iCheckRow][iCheckCol].getIsPiece() != 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+
+    return -1;
+
+}
+bool Board::can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece)
+{
+   if(piece.getPieceId() == 200) {
+
+
+		int iRowDelta = toY - fromY;
+		int iColDelta = toX - fromX;
+		if (((iRowDelta >= -1) && (iRowDelta <= 1)) &&
+			((iColDelta >= -1) && (iColDelta <= 1)))
+		{
+			return true;
+		}
+		return false;
+	}
+   // }
+
+    return -1;
+}
 
 void Board::display()
 {
