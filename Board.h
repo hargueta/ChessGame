@@ -27,6 +27,7 @@ class Board
 
         void display();
         bool IsInCheck(int player);
+        bool canMove(int player);
 
         //should update board every move.
 

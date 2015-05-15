@@ -361,8 +361,7 @@ bool Board::IsInCheck(int player) {  //char cColor
 			for (int iCol = 0; iCol < 8; ++iCol) {
 				if (arra[iRow][iCol].getIsPiece() != 0) {
 					if (arra[iRow][iCol].getPlayer() != player) {
-						if (arra[iRow][iCol].getPiece() == 100) //->IsLegalMove(iRow, iCol, iKingRow, iKingCol)) {
-							{
+						if (arra[iRow][iCol].getPiece() == 100)
 							    if(can_pawn_move(iRow, iCol, iKingRow,iKingCol) == true)
                                     return true;
 							}
@@ -394,11 +393,47 @@ bool Board::IsInCheck(int player) {  //char cColor
                       }
 					}
 				}
-			}
+
 
 
 		return false;
-	}
+}
+
+bool Board::canMove(int player)
+{
+		// Run through all pieces
+		for (int iRow = 0; iRow < 8; ++iRow) {
+			for (int iCol = 0; iCol < 8; ++iCol) {
+				if (arra[iRow][iCol] != 0) {
+					// If it is a piece of the current player, see if it has a legal move
+					if (arra[iRow][iCol].getPlayer() == player) {
+						for (int iMoveRow = 0; iMoveRow < 8; ++iMoveRow) {
+							for (int iMoveCol = 0; iMoveCol < 8; ++iMoveCol) {
+								if (arra[iRow][iCol].getIsPiece() //add a way to choose which function to choose to see if its a legal move
+            ) {
+									// Make move and check whether king is in check
+
+									arra[iMoveRow][iMoveCol].setIsPiece(arra[iRow][iCol].getIsPiece());
+									arra[iRow][iCol].setIsPiece(0);
+									bool bCanMove = !IsInCheck(player);
+									// Undo the move
+									arra[iRow][iCol]			= arra[iMoveRow][iMoveCol];
+									if (bCanMove) {
+										return true;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return false;
+}
+
+
+
+
 
 
 bool Board::isValidPiece(int x, int y) {
@@ -407,6 +442,7 @@ bool Board::isValidPiece(int x, int y) {
     else
         return false;
 }
+
 
 
 void Board::setIsCheckmate(bool isCheckmate)
