@@ -32,7 +32,7 @@ class Board
         //checks if the current player is inCheck which means they can
         //only move the king
         bool IsInCheck(int player);
-        //bool canMove(int player);
+        bool canMove(int player);
 
         void movePiece(int fromX, int fromY, int toX, int toY);
 
