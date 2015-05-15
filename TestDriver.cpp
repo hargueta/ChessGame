@@ -37,7 +37,9 @@ int main() {
             do {
                 cout << "Enter the position of the piece you would like to move: ";
                 cin >> fromX >> fromY;
-                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer1() && board.isValidPiece(fromY - 1, fromX - 1)) {
+                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer1()
+                        && board.isValidPiece(fromY - 1, fromX - 1)
+                        && (fromX >= 1 && fromX <= 8)) {
                     do {
                         cout << "Where would you like to move the piece? (x, y): ";
                         cin >> toX >> toY;
@@ -70,7 +72,9 @@ int main() {
             do {
                 cout << "Enter the position of the piece you would like to move: ";
                 cin >> fromX >> fromY;
-                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer2() && board.isValidPiece(fromY - 1, fromX - 1)) {
+                if(board.getTile(fromY - 1, fromX - 1).getIsPlayer2()
+                        && board.isValidPiece(fromY - 1, fromX - 1)
+                        && ((fromX >= 1 && fromX <= 8))) {
                     do {
                         cout << "Where would you like to move the piece? (x, y): ";
                         cin >> toX >> toY;
