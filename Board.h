@@ -26,6 +26,7 @@ class Board
         bool can_king_move(int fromX, int fromY, int toX, int toY, Piece& piece);
 
         void display();
+        bool IsInCheck(int player);
 
         //should update board every move.
 

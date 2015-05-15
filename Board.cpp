@@ -340,15 +340,15 @@ void Board::display()
 }
         //should update board every move.
 
-bool IsInCheck(char cColor) {
+bool Board::IsInCheck(int player) {  //char cColor
 		// Find the king
 		int iKingRow;
 		int iKingCol;
 		for (int iRow = 0; iRow < 8; ++iRow) {
 			for (int iCol = 0; iCol < 8; ++iCol) {
-				if (mqpaaBoard[iRow][iCol] != 0) {
-					if (mqpaaBoard[iRow][iCol]->GetColor() == cColor) {
-						if (mqpaaBoard[iRow][iCol]->GetPiece() == 'K') {
+				if (arra[iRow][iCol].getIsPiece() != 0) {
+					if (arra[iRow][iCol].getPlayer() == player) {
+						if (arra[iRow][iCol].getPieceIcon() == 'K') {
 							iKingRow = iRow;
 							iKingCol = iCol;
 						}
@@ -359,15 +359,43 @@ bool IsInCheck(char cColor) {
 		// Run through the opponent's pieces and see if any can take the king
 		for (int iRow = 0; iRow < 8; ++iRow) {
 			for (int iCol = 0; iCol < 8; ++iCol) {
-				if (mqpaaBoard[iRow][iCol] != 0) {
-					if (mqpaaBoard[iRow][iCol]->GetColor() != cColor) {
-						if (mqpaaBoard[iRow][iCol]->IsLegalMove(iRow, iCol, iKingRow, iKingCol, mqpaaBoard)) {
-							return true;
-						}
+				if (arra[iRow][iCol].getIsPiece() != 0) {
+					if (arra[iRow][iCol].getPlayer() != player) {
+						if (arra[iRow][iCol].getPiece() == 100) //->IsLegalMove(iRow, iCol, iKingRow, iKingCol)) {
+							{
+							    if(can_pawn_move(iRow, iCol, iKingRow,iKingCol) == true)
+                                    return true;
+							}
+                        else if(arra[iRow][iCol].getPiece() == 305)
+                            {
+                                if(can_bishop_move(iRow, iCol, iKingRow,iKingCol) == true)
+                                    return true;
+                            }
+                        else if(arra[iRow][iCol].getPiece() == 300)
+                            {
+                                if(can_knight_move(iRow,iCol,iKingRow,iKingCol))
+                                    return true;
+                            }
+                        else if(arra[iRow][iCol].getPiece() == 500)
+                            {
+                                if(can_rook_move(iRow,iCol,iKingRow,iKingCol))
+                                    return true;
+                            }
+                        else if(arra[iRow][iCol].getPiece() == 900)
+                            {
+                                if(can_queen_move(iRow,iCol,iKingRow,iKingCol))
+                                    return true;
+                            }
+                        else if(arra[iRow][iCol].getPiece() == 200)
+                            {
+                                if(can_king_move(iRow,iCol,iKingRow,iKingCol))
+                                    return true;
+                            }
+                      }
 					}
 				}
 			}
-		}
+
 
 		return false;
 	}
