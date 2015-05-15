@@ -1,3 +1,4 @@
+//author: Gabriel Zapata
 #ifndef BOARD_H_INCLUDED
 #define BOARD_H_INCLUDED
 #include "Tile.h"

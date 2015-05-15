@@ -1,3 +1,4 @@
+//author: Gabriel Zapata
 #ifndef TILE_H_INCLUDED
 #define TILE_H_INCLUDED
 

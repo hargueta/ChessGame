@@ -1,10 +1,12 @@
 // **********************************************************************
 // Filename:
 // Author: Hugo Argueta
+//Author: Gabriel Zapata
+//Author: Lesly Garcia
 // Last Modified:
 // Description:
 // **********************************************************************
-//
+
 
 #include "Board.h"
 #include "Tile.h"
@@ -18,6 +20,10 @@ bool checkCanPieceMove(int fromX, int fromY, int toX, int toY, Board& board);
 int main() {
     Board board;
 
+    cout << "====================" << endl;
+    cout << "||     Chess!     ||" << endl;
+    cout << "====================" << endl << endl;
+
     board.setup();
     board.display();
 
@@ -27,6 +33,7 @@ int main() {
 
     int fromX, fromY;
     int toX, toY;
+
 
     while(!board.getIsCheckmate()) {
         if(counter % 2 == 0) {

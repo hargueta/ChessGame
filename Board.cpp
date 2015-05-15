@@ -1,3 +1,4 @@
+//author: Gabriel Zapata
 #include "Board.h"
 #include "Piece.h"
 #include <iostream>
