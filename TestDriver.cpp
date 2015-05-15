@@ -51,7 +51,7 @@ int main() {
                         } else {
                             cout << "Invalid move" << endl;
                         }
-                    }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer1() && board.isValidPiece(fromY - 1, fromX - 1));
+                    }while(board.getTile(toY - 1, toX - 1).getIsPlayer1() || board.isValidPiece(toY - 1, toX - 1));
 
                 } else {
                     cout << "Invalid move!!!!!!\n";
@@ -60,19 +60,30 @@ int main() {
             }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer1());
         }
 
-        else if(counter % 2 == 1) {
-            cout << endl << counter << endl;
+        if(counter % 2 == 1) {
+            cout << endl << "counter: " << counter << endl;
             do {
                 cout << "Enter the position of the piece you would like to move: ";
                 cin >> fromX >> fromY;
                 if(board.getTile(fromY - 1, fromX - 1).getIsPlayer2() && board.isValidPiece(fromY - 1, fromX - 1)) {
                     cout << "Is player two" << endl;
-                    cout << endl;
-                    board.display();
-                    counter++;
+                    do {
+                        cout << "Where would you like to move the piece? (x, y): ";
+                        cin >> toX >> toY;
+                        if(board.getTile(toY - 1, toX - 1).getIsPlayer1() || !board.isValidPiece(toY - 1, toX - 1)) {
+                            cout << "Piece was moved" << endl;
+                            cout << endl;
+                            board.display();
+                            counter++;
+                        } else {
+                            cout << "Invalid move" << endl;
+                        }
+                    }while(board.getTile(toY - 1, toX - 1).getIsPlayer2() || board.isValidPiece(toY - 1, toX - 1));
+
                 } else {
                     cout << "Invalid move!!!!!!\n";
                 }
+
             }while(!board.getTile(fromY - 1, fromX - 1).getIsPlayer2());
         }
 

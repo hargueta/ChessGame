@@ -6,3 +6,7 @@ obj/Debug/Board.o
 obj/Debug/Board.o
 obj/Debug/Board.o
 *.o
+obj/Debug/Tile.o
+*.o
+obj/Debug/Board.o
+*.o
