@@ -476,7 +476,7 @@ bool Board::IsInCheck(int player) {  //char cColor
 
 		return false;
 }
-/*
+
 bool Board::canMove(int player)
 {
 		// Run through all pieces
@@ -508,7 +508,7 @@ bool Board::canMove(int player)
 		}
 		return false;
 }
-*/
+
 
 bool Board::isValidPiece(int x, int y) {
     if(arra[x][y].getPiece() != 0)
