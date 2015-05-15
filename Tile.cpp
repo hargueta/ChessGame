@@ -19,7 +19,7 @@ Tile::Tile()
 //the biggest function here.
 //will confirm the move the player is making is valid, and within
 //the move capabilities of the chess piece.
-bool Tile::pawn_move_option()
+bool Tile::pawn_move_option(int fromX, int fromY, int toX, int toY)
 {
   if(piece.getPieceId() == 100) {
 
@@ -60,7 +60,7 @@ bool Tile::pawn_move_option()
     }
 
 }
-bool Tile::bishop_move_option()
+bool Tile::bishop_move_option(int fromX, int fromY, int toX, int toY)
 {
     if(piece.getPieceId() == 305) {
     /*
@@ -87,7 +87,7 @@ bool Tile::bishop_move_option()
     }
 
 }
-bool Tile::knight_move_option()
+bool Tile::knight_move_option(int fromX, int fromY, int toX, int toY)
 {
 	/*
 		// Destination square is unoccupied or occupied by opposite color
@@ -106,7 +106,7 @@ bool Tile::knight_move_option()
 	*/
 
 }
-bool Tile::rook_move_option()
+bool Tile::rook_move_option(int fromX, int fromY, int toX, int toY)
 {
 
     if(piece.getPieceId() == 500) {
@@ -137,7 +137,7 @@ bool Tile::rook_move_option()
     }
 
 }
-bool Tile::queen_move_option()
+bool Tile::queen_move_option(int fromX, int fromY, int toX, int toY)
 {
     if(piece.getPieceId() == 900) {
     /*
@@ -182,7 +182,7 @@ bool Tile::queen_move_option()
     }
 
 }
-bool Tile::king_move_option()
+bool Tile::king_move_option(int fromX, int fromY, int toX, int toY)
 {
     if(piece.getPieceId() == 200) {
             /*
